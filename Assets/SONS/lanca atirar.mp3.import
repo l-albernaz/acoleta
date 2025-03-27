@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj7pcjqav4ohy"
+path="res://.godot/imported/lanca atirar.mp3-f77604ebcab435dbb9710a47ebbb7f9a.mp3str"
+
+[deps]
+
+source_file="res://Assets/SONS/lanca atirar.mp3"
+dest_files=["res://.godot/imported/lanca atirar.mp3-f77604ebcab435dbb9710a47ebbb7f9a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckcxkri4a8x0a"]
+
+[ext_resource type="Texture2D" uid="uid://c7fiwneylaqcb" path="res://quartzo.png" id="1_abpvb"]
+[ext_resource type="Script" path="res://scenes/quartzo.gd" id="1_w3v0b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orjbn"]
+radius = 28.0179
+
+[node name="quartzo" type="Area2D"]
+script = ExtResource("1_w3v0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 1.19209e-07)
+scale = Vector2(0.0844727, 0.0844727)
+texture = ExtResource("1_abpvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_orjbn")

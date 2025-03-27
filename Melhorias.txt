@@ -1,0 +1,17 @@
+
+Fazer o jogo acabar quando o abutre atingir 100 pontos 
+
+Fazer o jogo acabar quando o abutre levar 3 tiros.
+
+Colocar área do laser pra ser na asa também.
+
+Mudar som do laser atingindo.
+
+Colocar mais 2 estados pro abutre: ferido, e muito ferido (sangue).
+
+Melhorar áudios. (fazer efeitos virem de fontes separadas pra acerto nao interromper joia) 
+
+Trocar artes
+
+
+COLOCAR QUEM VENCEU NA TELA

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://6up0225iuxy1"]
+
+[ext_resource type="Script" path="res://scenes/ametista.gd" id="1_dqw0o"]
+[ext_resource type="Texture2D" uid="uid://ckyptv71glbyj" path="res://Assets/ametista.png" id="1_rodap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg8hy"]
+size = Vector2(42.0662, 42.0752)
+
+[node name="ametista" type="Area2D"]
+position = Vector2(-1, -1)
+script = ExtResource("1_dqw0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.549988, -3.45003)
+scale = Vector2(0.0733398, 0.0733398)
+texture = ExtResource("1_rodap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.539978, 1.80797)
+rotation = 0.837758
+shape = SubResource("RectangleShape2D_tg8hy")
