@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqjdp6b8h4eii"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_lrovf"]
+[ext_resource type="PackedScene" uid="uid://dfgelkv50ufdi" path="res://scenes/abutre.tscn" id="2_d7w7v"]
+[ext_resource type="PackedScene" uid="uid://6up0225iuxy1" path="res://scenes/ametista.tscn" id="2_hbbqy"]
+[ext_resource type="PackedScene" uid="uid://ckcxkri4a8x0a" path="res://scenes/quartzo.tscn" id="3_5h13a"]
+[ext_resource type="Texture2D" uid="uid://bmyhxwghbuuqy" path="res://Assets/praia.jpg" id="4_851fe"]
+[ext_resource type="FontFile" uid="uid://c865v21hlidm5" path="res://Assets/AMORIA.otf" id="5_37cpk"]
+[ext_resource type="AudioStream" uid="uid://cpmsqc7mufxfd" path="res://Assets/SONS/bgm.mp3" id="6_qxep3"]
+[ext_resource type="AudioStream" uid="uid://dmi33u2mbx83l" path="res://Assets/SONS/diamond-found-190255.mp3" id="7_r8hdb"]
+[ext_resource type="PackedScene" uid="uid://chjaing4u1qt7" path="res://scenes/drone.tscn" id="9_8fqro"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(103, 72)
+script = ExtResource("1_lrovf")
+ametista_scene = ExtResource("2_hbbqy")
+quartzo_scene = ExtResource("3_5h13a")
+
+[node name="Praia" type="Sprite2D" parent="."]
+position = Vector2(462, 261)
+scale = Vector2(0.684927, 0.734024)
+texture = ExtResource("4_851fe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(480, 247)
+scale = Vector2(0.667383, 0.667383)
+
+[node name="Abutre" parent="." instance=ExtResource("2_d7w7v")]
+position = Vector2(389, 47)
+
+[node name="AmetistaTimer" type="Timer" parent="."]
+wait_time = 6.113
+autostart = true
+
+[node name="QuartzoTimer" type="Timer" parent="."]
+wait_time = 4.363
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 954.0
+offset_top = 246.0
+offset_right = 1040.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(0.648849, 0.114661, 2.88785e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_37cpk")
+theme_override_font_sizes/font_size = 40
+text = "000"
+
+[node name="Labeltempo" type="Label" parent="."]
+offset_left = -86.0
+offset_top = 246.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(0.819608, 0.890196, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_37cpk")
+theme_override_font_sizes/font_size = 46
+text = "000"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qxep3")
+volume_db = -25.469
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_r8hdb")
+volume_db = -23.111
+pitch_scale = 1.14
+
+[node name="Area2D" parent="." instance=ExtResource("9_8fqro")]
+position = Vector2(404, 535)
+
+[node name="tempojogo" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_entered" from="Abutre" to="." method="_on_abutre_area_entered"]
+[connection signal="timeout" from="AmetistaTimer" to="." method="fimtempo"]
+[connection signal="timeout" from="QuartzoTimer" to="." method="fimtempo"]
