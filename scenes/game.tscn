@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dqjdp6b8h4eii"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_lrovf"]
+[ext_resource type="Script" uid="uid://hh1nfgecb6mg" path="res://scenes/game.gd" id="1_lrovf"]
 [ext_resource type="PackedScene" uid="uid://dfgelkv50ufdi" path="res://scenes/abutre.tscn" id="2_d7w7v"]
 [ext_resource type="PackedScene" uid="uid://6up0225iuxy1" path="res://scenes/ametista.tscn" id="2_hbbqy"]
 [ext_resource type="PackedScene" uid="uid://ckcxkri4a8x0a" path="res://scenes/quartzo.tscn" id="3_5h13a"]

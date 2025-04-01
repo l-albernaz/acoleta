@@ -15,8 +15,9 @@ const DIAMOND_FOUND_190255 = preload("res://Assets/SONS/diamond-found-190255.mp3
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+var tiros_no_abutre: int = 0
 var _pontos: int = 0
-var tempo_restante: int = 150
+var tempo_restante: int = 110
 
 func _ready() -> void:
 	ametista_timer.wait_time = 14.4  
@@ -75,19 +76,40 @@ func pararsom() -> void:
 	audio_stream_player_2d.play()
 
 func _on_abutre_area_entered(area: Area2D) -> void:
+	
 	var pontos_gema = 0
 	
 	if area is ametista:
 		pontos_gema = 10
-		audio_stream_player_2d.stream = DIAMOND_FOUND_190255  
 	elif area is quartzo:
 		pontos_gema = 2
-		audio_stream_player_2d.stream = DIAMOND_FOUND_190255  
-	elif area is laser:  
-		audio_stream_player_2d.stream = LANCA_ATINGIRR  
+	elif area is laser:
+		tiros_no_abutre += 1
+		area.queue_free()  # Remove o laser imediatamente após o impacto
+		
+		# Muda a imagem do Abutre ao ser atingido
+		var abutre = get_node("Abutre")  # Certifique-se de que o caminho está correto
+		if abutre:
+			abutre.receber_tiro()
+
+		if tiros_no_abutre >= 3:
+			encerrar()
+			return  # Evita que o código continue rodando após o encerramento
 	
+	# Atualiza pontuação apenas uma vez
 	_pontos += pontos_gema
 	label.text = "%03d" % _pontos
+	
+	# Reproduz o som adequado
 	audio_stream_player_2d.position = area.position * 1.5
+	if pontos_gema > 0:
+		audio_stream_player_2d.stream = DIAMOND_FOUND_190255
+	elif area is laser:
+		audio_stream_player_2d.stream = LANCA_ATINGIRR
 	audio_stream_player_2d.play()
+	
 	area.queue_free()
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()

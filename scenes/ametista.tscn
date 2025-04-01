@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://6up0225iuxy1"]
 
-[ext_resource type="Script" path="res://scenes/ametista.gd" id="1_dqw0o"]
+[ext_resource type="Script" uid="uid://dpgk6621hva6c" path="res://scenes/ametista.gd" id="1_dqw0o"]
 [ext_resource type="Texture2D" uid="uid://ckyptv71glbyj" path="res://Assets/ametista.png" id="1_rodap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg8hy"]

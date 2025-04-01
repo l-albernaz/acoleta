@@ -3,7 +3,7 @@ extends Area2D
 @export var speed: float = 650
 @export var laser_scene: PackedScene 
 
-@onready var tan_2: Sprite2D = $Tan2
+@onready var drone: Sprite2D = $Drone
 
 var podeatirar = true
 

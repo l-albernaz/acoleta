@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfgelkv50ufdi"]
 
-[ext_resource type="Texture2D" uid="uid://dubufuniwc4yn" path="res://Assets/abutre.png" id="1_7la0y"]
-[ext_resource type="Script" path="res://scenes/abutre.gd" id="1_a050k"]
+[ext_resource type="Script" uid="uid://b35pja2tcptok" path="res://scenes/abutre.gd" id="1_a050k"]
+[ext_resource type="Texture2D" uid="uid://68lskcel3ks3" path="res://Assets/abutresolo.png" id="2_lwxg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2617"]
-size = Vector2(75, 38)
+size = Vector2(77.125, 38)
 
 [node name="Abutre" type="Area2D"]
 script = ExtResource("1_a050k")
@@ -12,8 +12,8 @@ script = ExtResource("1_a050k")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5.62515, -17.3748)
 scale = Vector2(0.173096, 0.173096)
-texture = ExtResource("1_7la0y")
+texture = ExtResource("2_lwxg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(23.5, 50)
+position = Vector2(5, 30)
 shape = SubResource("RectangleShape2D_s2617")
